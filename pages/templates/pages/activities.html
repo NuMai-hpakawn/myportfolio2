@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Activities of Mai{% endblock %}
+{% block brand_name %}Activities of Mai{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<div class="text-center mb-5 py-4">
+  <h1 class="display-4 fw-bold mb-3">Life Beyond Design</h1>
+  <p class="lead text-muted">Exploring the activities, hobbies, and learning paths that fuel my creativity.</p>
+</div>
+
+<!-- School Activities Section -->
+<div class="mb-5">
+  <h2 class="h3 fw-bold mb-4">School Activities</h2>
+  <div class="row g-4">
+    <!-- Global Training Program -->
+    <div class="col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-start gap-3 mb-3">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 56px; height: 56px;">
+              <i class="bi bi-globe text-primary fs-4"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">Global Training Program</h5>
+              <p class="text-muted small mb-0">Singapore and Malaysia</p>
+            </div>
+          </div>
+          <!-- Images for Global Training Program -->
+          <div class="row g-2 mt-3">
+            <div class="col-6">
+              <img src="{% static 'pages/images/globle-training-1.jpg' %}" class="img-fluid rounded" alt="Global Training Program 1" style="height: 150px; width: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-secondary bg-opacity-25 rounded d-flex align-items-center justify-content-center\' style=\'height: 150px;\'><small class=\'text-muted\'>Image 1</small></div>';">
+            </div>
+            <div class="col-6">
+              <img src="{% static 'pages/images/global-training-2.jpg' %}" class="img-fluid rounded" alt="Global Training Program 2" style="height: 150px; width: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-secondary bg-opacity-25 rounded d-flex align-items-center justify-content-center\' style=\'height: 150px;\'><small class=\'text-muted\'>Image 2</small></div>';">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Myanmar Student Leader -->
+    <div class="col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-start gap-3 mb-3">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 56px; height: 56px;">
+              <i class="bi bi-people text-primary fs-4"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">Myanmar Student Leader</h5>
+              <p class="text-muted small mb-0">Leadership Role</p>
+            </div>
+          </div>
+          <!-- Images for Myanmar Student Leader -->
+          <div class="row g-2 mt-3">
+            <div class="col-6">
+              <img src="{% static 'pages/images/leader-1.jpg' %}" class="img-fluid rounded" alt="Myanmar Student Leader 1" style="height: 150px; width: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-secondary bg-opacity-25 rounded d-flex align-items-center justify-content-center\' style=\'height: 150px;\'><small class=\'text-muted\'>Image 1</small></div>';">
+            </div>
+            <div class="col-6">
+              <img src="{% static 'pages/images/leader-2.jpg' %}" class="img-fluid rounded" alt="Myanmar Student Leader 2" style="height: 150px; width: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-secondary bg-opacity-25 rounded d-flex align-items-center justify-content-center\' style=\'height: 150px;\'><small class=\'text-muted\'>Image 2</small></div>';">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hobbies & Interests Section -->
+<div class="mb-5">
+  <h2 class="h3 fw-bold mb-4">Hobbies & Interests</h2>
+  <div class="row g-4">
+    <!-- Marathon Running -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-lg h-100" style="min-height: 200px;">
+        <div class="row g-0 h-100">
+          <div class="col-6">
+            <img src="{% static 'pages/images/marathon.jpg' %}" class="img-fluid h-100" alt="Marathon Running" style="object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gradient\' style=\'background: linear-gradient(135deg, #1e3c72 0%, #6f42c1 100%); height: 100%;\'></div>';">
+          </div>
+          <div class="col-6 text-white d-flex flex-column justify-content-center p-4" style="background: linear-gradient(135deg, #1e3c72 0%, #6f42c1 100%);">
+            <h5 class="fw-bold mb-2">Marathon Running</h5>
+            <p class="small mb-0">Building endurance and mental resilience through long-distance running.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Singing -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-lg h-100" style="min-height: 200px;">
+        <div class="row g-0 h-100">
+          <div class="col-6">
+            <img src="{% static 'pages/images/singing.jpg' %}" class="img-fluid h-100" alt="Singing" style="object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gradient\' style=\'background: linear-gradient(135deg, #6f42c1 0%, #1a1a2e 100%); height: 100%;\'></div>';">
+          </div>
+          <div class="col-6 text-white d-flex flex-column justify-content-center p-4" style="background: linear-gradient(135deg, #6f42c1 0%, #1a1a2e 100%);">
+            <h5 class="fw-bold mb-2">Singing</h5>
+            <p class="small mb-0">Expressing creativity through vocal performance and music.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Football -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-lg h-100" style="min-height: 200px;">
+        <div class="row g-0 h-100">
+          <div class="col-6">
+            <img src="{% static 'pages/images/football.jpg' %}" class="img-fluid h-100" alt="Football" style="object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gradient\' style=\'background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%); height: 100%;\'></div>';">
+          </div>
+          <div class="col-6 text-white d-flex flex-column justify-content-center p-4" style="background: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);">
+            <h5 class="fw-bold mb-2">Football</h5>
+            <p class="small mb-0">Passionate about teamwork and competitive sports.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Interesting Section -->
+<div class="mb-5">
+  <h2 class="h3 fw-bold mb-4">Interesting</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-start gap-3">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 56px; height: 56px;">
+              <i class="bi bi-building text-primary fs-4"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">Korea Traditional</h5>
+              <p class="text-muted small mb-0">Culture & History</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-start gap-3">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 56px; height: 56px;">
+              <i class="bi bi-airplane text-primary fs-4"></i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">Like to Travel</h5>
+              <p class="text-muted small mb-0">Exploring New Places</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Current Learning Focus Section -->
+<div class="mb-5">
+  <h2 class="h3 fw-bold mb-4">Current Learning Focus</h2>
+  <div class="row g-4">
+    <!-- Korea Advance Level -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 56px; height: 56px;">
+              <i class="bi bi-award text-primary fs-4"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h5 class="fw-bold mb-0">Korea Advance Level</h5>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="progress flex-grow-1" style="height: 8px;">
+              <div class="progress-bar" role="progressbar" style="width: 85%; background-color: #6f42c1;"></div>
+            </div>
+            <span class="text-muted small fw-medium">Advanced</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Dancing -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 56px; height: 56px;">
+              <i class="bi bi-music-note-beamed text-primary fs-4"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h5 class="fw-bold mb-0">Dancing</h5>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="progress flex-grow-1" style="height: 8px;">
+              <div class="progress-bar" role="progressbar" style="width: 65%; background-color: #6f42c1;"></div>
+            </div>
+            <span class="text-muted small fw-medium">Intermediate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- English -->
+    <div class="col-md-4">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 56px; height: 56px;">
+              <i class="bi bi-globe text-primary fs-4"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h5 class="fw-bold mb-0">English</h5>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="progress flex-grow-1" style="height: 8px;">
+              <div class="progress-bar" role="progressbar" style="width: 95%; background-color: #6f42c1;"></div>
+            </div>
+            <span class="text-muted small fw-medium">Fluent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+{% endblock %}
+

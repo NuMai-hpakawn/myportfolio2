@@ -1,0 +1,103 @@
+{% extends "blog/base.html" %}
+{% block title %}Contact of Mai{% endblock %}
+{% block brand_name %}Contact of Mai{% endblock %}
+
+{% block content %}
+<div class="row g-0 mb-5">
+  <!-- Left Section: Contact Info -->
+  <div class="col-lg-5 bg-light p-5 d-flex flex-column justify-content-center">
+    <div class="text-primary text-uppercase fw-bold small mb-3" style="letter-spacing: 1px;">GET IN TOUCH</div>
+    <h1 class="display-4 fw-bold mb-4">Your can contact me anytime</h1>
+    <p class="lead text-muted mb-5">Have a question or need assistance? Contact me directly through the form below, and I'll get back to you as soon as possible.</p>
+    
+    <!-- Contact Options -->
+    <div class="mb-4">
+      <div class="d-flex align-items-start gap-3 mb-4">
+        <div class="text-primary">
+          <i class="bi bi-envelope fs-4"></i>
+        </div>
+        <div>
+          <h6 class="fw-bold mb-1">Chat with me</h6>
+          <p class="text-muted small mb-1">Our friendly team is here to help.</p>
+          <a href="mailto:hello@portfolio.com" class="text-primary text-decoration-none">hpnunumai1995@gmail.com</a>
+        </div>
+      </div>
+      
+      <div class="d-flex align-items-start gap-3 mb-4">
+        <div class="text-primary">
+          <i class="bi bi-geo-alt fs-4"></i>
+        </div>
+        <div>
+          <h6 class="fw-bold mb-1">Visit us</h6>
+          <p class="text-muted small mb-1">Come say hello to my chatbot</p>
+          <p class="text-muted small mb-0">100 Smith Street, Collingwood VIC 3066 AU</p>
+        </div>
+      </div>
+      
+      <div class="d-flex align-items-start gap-3">
+        <div class="text-primary">
+          <i class="bi bi-telephone fs-4"></i>
+        </div>
+        <div>
+          <h6 class="fw-bold mb-1">Call me</h6>
+          <p class="text-muted small mb-1">Mon-Fri from 8am to 5pm.</p>
+          <a href="tel:+15550000000" class="text-primary text-decoration-none">010-1234-5678</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Right Section: Contact Form -->
+  <div class="col-lg-7 bg-white p-5">
+    <form method="post" class="needs-validation" novalidate>
+      {% csrf_token %}
+      <div class="row g-3 mb-3">
+        <div class="col-md-6">
+          <label for="firstName" class="form-label fw-medium">First Name</label>
+          <input type="text" class="form-control form-control-lg" id="firstName" name="first_name" placeholder="Jane" required>
+        </div>
+        <div class="col-md-6">
+          <label for="lastName" class="form-label fw-medium">Last Name</label>
+          <input type="text" class="form-control form-control-lg" id="lastName" name="last_name" placeholder="Doe" required>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="email" class="form-label fw-medium">Email Address</label>
+        <div class="position-relative">
+          <input type="email" class="form-control form-control-lg pe-5" id="email" name="email" placeholder="jane@example.com" required>
+          <i class="bi bi-envelope position-absolute end-0 top-50 translate-middle-y me-3 text-muted"></i>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="subject" class="form-label fw-medium">Subject</label>
+        <div class="position-relative">
+          <select class="form-select form-select-lg pe-5" id="subject" name="subject" required>
+            <option value="">Select a topic</option>
+            <option value="project">Project Inquiry</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="general">General Question</option>
+            <option value="other">Other</option>
+          </select>
+          <i class="bi bi-chevron-down position-absolute end-0 top-50 translate-middle-y me-3 text-muted pointer-events-none"></i>
+        </div>
+      </div>
+      
+      <div class="mb-4">
+        <label for="message" class="form-label fw-medium">Message</label>
+        <textarea class="form-control form-control-lg" id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+      </div>
+      
+      <div class="text-end">
+        <button type="submit" class="btn btn-primary btn-lg px-5 py-3 fw-bold">
+          Send Message <i class="bi bi-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+{% endblock %}

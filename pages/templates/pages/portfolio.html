@@ -1,0 +1,398 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Portfolio of Mai{% endblock %}
+{% block brand_name %}Portfolio of Mai{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5 py-4">
+  <h1 class="display-4 fw-bold mb-3">My Portfolio</h1>
+  <p class="lead text-muted">Here are some of my recent projects and work</p>
+</div>
+
+<!-- Project 1: UniCare AI -->
+<div class="mb-5">
+  <h2 class="h2 fw-bold mb-4">Project 1</h2>
+  <div class="card shadow-lg">
+    <div class="row g-0">
+      <!-- Left Side: Project Details -->
+      <div class="col-lg-6 p-4">
+        <h3 class="h4 fw-bold mb-3">UniCare AI - 유학생 맞춤형 다국어 심리상담 및 캠퍼스 지원 AI 웹 서비스</h3>
+      
+      <div class="mb-4">
+        <p class="mb-2"><strong>팀명:</strong> Pioneer</p>
+        <p class="mb-2"><strong>지도교수:</strong> 전숙연, 장진수</p>
+        <p class="mb-2"><strong>연구사업:</strong> 캡스톤 디자인</p>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="fw-bold mb-2">개발배경</h5>
+        <p class="text-muted small">한국의 유학생 수가 증가하면서 언어 장벽, 학업, 사회적 통합 등의 어려움을 겪고 있으며, 기존 상담 시스템의 한계로 인해 AI 기반 맞춤형 상담 서비스의 필요성이 대두되었습니다.</p>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="fw-bold mb-2">개발목표</h5>
+        <p class="text-muted small">생성형 AI와 로컬 LLM을 활용하여 유학생을 위한 맞춤형 다국어 AI 상담 지원 웹 서비스를 개발하는 것을 목표로 합니다.</p>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="fw-bold mb-2">주요 기능</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>AI 상담 챗봇</li>
+          <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>음성 대화 기능</li>
+          <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>VR 기능</li>
+          <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>감정 표현 및 추적</li>
+        </ul>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="fw-bold mb-2">기술 스택</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge bg-primary">LangChain</span>
+          <span class="badge bg-primary">LangGraph</span>
+          <span class="badge bg-primary">OpenAI API</span>
+          <span class="badge bg-primary">Web Development</span>
+          <span class="badge bg-primary">Database</span>
+          <span class="badge bg-primary">AI Integration</span>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="fw-bold mb-2">연계 교과목</h5>
+        <span class="badge bg-secondary me-1">데이터베이스</span>
+        <span class="badge bg-secondary me-1">캡스톤디자인</span>
+        <span class="badge bg-secondary">인공지능의 이해</span>
+      </div>
+
+      <div>
+        <h5 class="fw-bold mb-2">기대효과</h5>
+        <ul class="list-unstyled text-muted small">
+          <li class="mb-1">• 대학 상담센터 업무 보조</li>
+          <li class="mb-1">• 유학생 정서 안정 및 학업 성취도 향상 지원</li>
+          <li class="mb-1">• 상담 인력 부담 감소</li>
+          <li class="mb-1">• 글로벌 교육 서비스 경쟁력 강화</li>
+        </ul>
+      </div>
+
+      <div class="mt-4">
+        <p class="text-muted small mb-0"><strong>기관:</strong> 전주비전대학교 (Jeonju Vision University)</p>
+      </div>
+
+      <!-- Project Links -->
+      <div class="mt-4 pt-3 border-top">
+        <h5 class="fw-bold mb-3">Project Links</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="#" class="btn btn-primary btn-sm" target="_blank">
+            <i class="bi bi-play-circle me-1"></i> Demo
+          </a>
+          <a href="#" class="btn btn-dark btn-sm" target="_blank">
+            <i class="bi bi-github me-1"></i> GitHub
+          </a>
+          <a href="#" class="btn btn-outline-secondary btn-sm" target="_blank">
+            <i class="bi bi-link-45deg me-1"></i> More
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side: Project Images -->
+    <div class="col-lg-6 bg-light p-4">
+      <div class="row g-3 justify-content-center">
+        <!-- Image 1: Award Ceremony -->
+        <div class="col-10">
+          <div class="rounded overflow-hidden shadow-sm bg-white">
+            <img src="{% static 'pages/images/project1-award.jpg' %}" alt="Award Ceremony - AI 부문 대상" class="img-fluid" style="display: block; width: 100%; height: auto;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-3 text-center bg-secondary bg-opacity-25 rounded\'><small class=\'text-muted\'>Award Ceremony Image<br>Place image at: pages/static/pages/images/project1-award.jpg</small></div>';">
+          </div>
+        </div>
+        
+        <!-- Image 2: Bloom Website Screenshot -->
+        <div class="col-10">
+          <div class="rounded overflow-hidden shadow-sm bg-white">
+            <img src="{% static 'pages/images/project1-bloom.jpg' %}" alt="Bloom - Mental Health Platform Website" class="img-fluid" style="display: block; width: 100%; height: auto;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-3 text-center bg-secondary bg-opacity-25 rounded\'><small class=\'text-muted\'>Bloom Website Image<br>Place image at: pages/static/pages/images/project1-bloom.jpg</small></div>';">
+          </div>
+        </div>
+        
+        <!-- Image 3: Features -->
+        <div class="col-10">
+          <div class="rounded overflow-hidden shadow-sm bg-white">
+            <img src="{% static 'pages/images/p1-features.png' %}" alt="Key Features" class="img-fluid" style="display: block; width: 100%; height: auto;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-3 text-center bg-secondary bg-opacity-25 rounded\'><small class=\'text-muted\'>Features Image<br>Place image at: pages/static/pages/images/p1-features.png</small></div>';">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- Project 2: Myanmar University Homepage -->
+<div class="mb-5">
+  <h2 class="h2 fw-bold mb-4">Project 2</h2>
+  <div class="card shadow-lg">
+    <div class="row g-0">
+      <!-- Left Side: Project Details -->
+      <div class="col-lg-6 p-4">
+        <h3 class="h4 fw-bold mb-3">미얀마어 대학 홈페이지 개발 (Myanmar Language University Homepage)</h3>
+        
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">프로젝트 개요</h5>
+          <p class="text-muted">팀 프로젝트의 일환으로 미얀마어를 사용한 대학 홈페이지를 개발하였습니다. 이 프로젝트는 한국 대학에 대한 정보를 미얀마어 사용자들이 쉽게 접근할 수 있도록 하는 것을 목표로 하였습니다.</p>
+        </div>
+
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">주요 기여</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>사이트 구조 설계</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>미얀마어 콘텐츠 구현</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>사용자 친화적인 커뮤니케이션 디자인</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-primary me-2"></i>다국어 현지화 작업</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">주요 기능</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-translate text-primary me-2"></i>미얀마어 네비게이션 (အိမ်, အကြောင်း, ဌာနများ)</li>
+            <li class="mb-2"><i class="bi bi-house text-primary me-2"></i>홈페이지 (학사복 차림 학생들 이미지)</li>
+            <li class="mb-2"><i class="bi bi-building text-primary me-2"></i>학과 소개 페이지 (Child Welfare, Social Welfare Management 등)</li>
+            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i>대학 정보 제공</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">기술 스택</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-primary">Web Development</span>
+            <span class="badge bg-primary">Localization</span>
+            <span class="badge bg-primary">Multilingual Support</span>
+            <span class="badge bg-primary">UI/UX Design</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">학습한 내용</h5>
+          <ul class="list-unstyled text-muted small">
+            <li class="mb-1">• 협업 능력 향상</li>
+            <li class="mb-1">• 웹 콘텐츠의 다국어 현지화 방법</li>
+            <li class="mb-1">• 사용자 중심의 웹사이트 설계</li>
+            <li class="mb-1">• 명확하고 효과적인 커뮤니케이션 디자인</li>
+          </ul>
+        </div>
+
+        <div class="mt-4">
+          <p class="text-muted small mb-0"><strong>프로젝트 유형:</strong> 팀 프로젝트</p>
+          <p class="text-muted small mb-0"><strong>대상 사용자:</strong> 미얀마어 사용자</p>
+        </div>
+
+        <!-- Project Links -->
+        <div class="mt-4 pt-3 border-top">
+          <h5 class="fw-bold mb-3">Project Links</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#" class="btn btn-primary btn-sm" target="_blank">
+              <i class="bi bi-play-circle me-1"></i> Demo
+            </a>
+            <a href="#" class="btn btn-dark btn-sm" target="_blank">
+              <i class="bi bi-github me-1"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-outline-secondary btn-sm" target="_blank">
+              <i class="bi bi-link-45deg me-1"></i> More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Project Images -->
+      <div class="col-lg-6 bg-light p-4">
+        <div class="row g-3 justify-content-center">
+          <!-- Image 1 -->
+          <div class="col-10">
+            <div class="rounded overflow-hidden shadow-sm bg-white">
+              <img src="{% static 'pages/images/p2-home.jpg' %}" alt="Myanmar University Homepage 1" class="img-fluid" style="display: block; width: 100%; height: auto;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-3 text-center bg-secondary bg-opacity-25 rounded\'><small class=\'text-muted\'>Image 1<br>Place image at: pages/static/pages/images/project2-image1.jpg</small></div>';">
+            </div>
+          </div>
+          
+          <!-- Image 2 -->
+          <div class="col-10">
+            <div class="rounded overflow-hidden shadow-sm bg-white">
+              <img src="{% static 'pages/images/p2-home2.jpg' %}" alt="Myanmar University Homepage 2" class="img-fluid" style="display: block; width: 100%; height: auto;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-3 text-center bg-secondary bg-opacity-25 rounded\'><small class=\'text-muted\'>Image 2<br>Place image at: pages/static/pages/images/project2-image2.jpg</small></div>';">
+            </div>
+          </div>
+          
+          <!-- Image 3 -->
+          <div class="col-10">
+            <div class="rounded overflow-hidden shadow-sm bg-white">
+              <img src="{% static 'pages/images/p2-home3.jpg' %}" alt="Myanmar University Homepage 3" class="img-fluid" style="display: block; width: 100%; height: auto;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-3 text-center bg-secondary bg-opacity-25 rounded\'><small class=\'text-muted\'>Image 3<br>Place image at: pages/static/pages/images/p2-home3.jpg</small></div>';">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project 3: Dental Health Application -->
+<div class="mb-5">
+  <h2 class="h2 fw-bold mb-4">Project 3</h2>
+  <div class="card shadow-lg">
+    <div class="row g-0">
+      <!-- Left Side: Project Details -->
+      <div class="col-lg-6 p-4">
+        <h3 class="h4 fw-bold mb-3">Dental Health Application (Cross Platform)</h3>
+        <p class="text-muted mb-4">React Native와 Expo를 활용한 크로스 플랫폼 치과 건강 관리 모바일 애플리케이션</p>
+        
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">주요 기능</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-house-door text-primary me-2"></i><strong>Home Tab:</strong> 홈 화면 - 치아 건강 정보 및 주요 기능 접근</li>
+            <li class="mb-2"><i class="bi bi-book text-primary me-2"></i><strong>Learn Tab:</strong> 학습 탭 - 치과 건강 관련 동영상 콘텐츠 제공</li>
+            <li class="mb-2"><i class="bi bi-lightbulb text-primary me-2"></i><strong>Creative Tab:</strong> 창의 탭 - 게임 및 퀴즈를 통한 재미있는 학습</li>
+            <li class="mb-2"><i class="bi bi-chat-dots text-primary me-2"></i><strong>AI Chatbox:</strong> AI 치과 상담 챗봇 - 실시간 치과 건강 상담</li>
+            <li class="mb-2"><i class="bi bi-person text-primary me-2"></i><strong>My Page:</strong> 마이 페이지 - 사용자 데이터 및 설문조사 결과 관리</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">애플리케이션 특징</h5>
+          <ul class="list-unstyled text-muted small">
+            <li class="mb-1">• 체크 기능 - 건강 상태 체크리스트</li>
+            <li class="mb-1">• 퀴즈 기능 - 치과 지식 테스트</li>
+            <li class="mb-1">• 동영상 콘텐츠 - 치아 건강 관리 팁</li>
+            <li class="mb-1">• 제품 추천 도구 - 구강 관리용품 추천</li>
+            <li class="mb-1">• 설문조사 결과 추적 - 사용자 응답 관리</li>
+            <li class="mb-1">• TOOTH TRIVIA 게임 - 재미있는 치과 지식 게임</li>
+            <li class="mb-1">• AI 기반 치과 상담 - 24/7 실시간 상담 지원</li>
+          </ul>
+        </div>
+
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">기술 스택</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge bg-primary">React Native</span>
+            <span class="badge bg-primary">Expo</span>
+            <span class="badge bg-primary">Cross Platform</span>
+            <span class="badge bg-primary">Mobile App</span>
+            <span class="badge bg-primary">AI Chatbot</span>
+            <span class="badge bg-primary">User Data Management</span>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <h5 class="fw-bold mb-2">주요 화면</h5>
+          <ul class="list-unstyled text-muted small">
+            <li class="mb-1">• 홈 화면 - 건강 정보 카드, 더 많은 영상, 기능 아이콘</li>
+            <li class="mb-1">• 학습 화면 - 충치, 치주질환, 구강관리용품, 연령별 관리 정보</li>
+            <li class="mb-1">• 게임 화면 - TOOTH TRIVIA TIME 게임</li>
+            <li class="mb-1">• 제품 추천 화면 - 전동칫솔, 치약, 치실, 가글 등</li>
+            <li class="mb-1">• AI 상담 화면 - 실시간 AI 치과 어시스턴트</li>
+          </ul>
+        </div>
+
+        <!-- Project Links -->
+        <div class="mt-4 pt-3 border-top">
+          <h5 class="fw-bold mb-3">Project Links</h5>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#" class="btn btn-primary btn-sm" target="_blank">
+              <i class="bi bi-play-circle me-1"></i> Demo
+            </a>
+            <a href="#" class="btn btn-dark btn-sm" target="_blank">
+              <i class="bi bi-github me-1"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-outline-secondary btn-sm" target="_blank">
+              <i class="bi bi-link-45deg me-1"></i> More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Project Screenshots -->
+      <div class="col-lg-6 bg-light p-4">
+        <div class="mb-3">
+          <h5 class="fw-bold mb-3">앱 스크린샷</h5>
+          <p class="text-muted small">React Native와 Expo로 개발된 크로스 플랫폼 모바일 애플리케이션의 주요 화면들입니다.</p>
+        </div>
+        
+        <!-- App Screenshots Grid (6 screens) -->
+        <div class="row g-2 mb-3">
+          <!-- Login Page -->
+          <div class="col-4">
+            <div class="text-center">
+              <div class="rounded overflow-hidden shadow-sm border mx-auto" style="max-width: 120px;">
+                <img src="{% static 'pages/images/project3-login.jpg' %}" alt="Login Page" class="w-100" style="object-fit: cover; aspect-ratio: 9/16;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-2 bg-secondary bg-opacity-25 rounded\' style=\'aspect-ratio: 9/16;\'><small class=\'text-muted\'>Login</small></div>';">
+              </div>
+              <small class="d-block mt-1 fw-medium" style="font-size: 0.7rem;">Login</small>
+            </div>
+          </div>
+          
+          <!-- Home Page -->
+          <div class="col-4">
+            <div class="text-center">
+              <div class="rounded overflow-hidden shadow-sm border mx-auto" style="max-width: 120px;">
+                <img src="{% static 'pages/images/project3-home.jpg' %}" alt="Home Page" class="w-100" style="object-fit: cover; aspect-ratio: 9/16;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-2 bg-secondary bg-opacity-25 rounded\' style=\'aspect-ratio: 9/16;\'><small class=\'text-muted\'>Home</small></div>';">
+              </div>
+              <small class="d-block mt-1 fw-medium" style="font-size: 0.7rem;">Home</small>
+            </div>
+          </div>
+          
+          <!-- Learn Page -->
+          <div class="col-4">
+            <div class="text-center">
+              <div class="rounded overflow-hidden shadow-sm border mx-auto" style="max-width: 120px;">
+                <img src="{% static 'pages/images/project3-learn.jpg' %}" alt="Learn Page" class="w-100" style="object-fit: cover; aspect-ratio: 9/16;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-2 bg-secondary bg-opacity-25 rounded\' style=\'aspect-ratio: 9/16;\'><small class=\'text-muted\'>Learn</small></div>';">
+              </div>
+              <small class="d-block mt-1 fw-medium" style="font-size: 0.7rem;">Learn</small>
+            </div>
+          </div>
+          
+          <!-- Creative Page -->
+          <div class="col-4">
+            <div class="text-center">
+              <div class="rounded overflow-hidden shadow-sm border mx-auto" style="max-width: 120px;">
+                <img src="{% static 'pages/images/project3-creative.jpg' %}" alt="Creative Page" class="w-100" style="object-fit: cover; aspect-ratio: 9/16;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-2 bg-secondary bg-opacity-25 rounded\' style=\'aspect-ratio: 9/16;\'><small class=\'text-muted\'>Creative</small></div>';">
+              </div>
+              <small class="d-block mt-1 fw-medium" style="font-size: 0.7rem;">Creative</small>
+            </div>
+          </div>
+          
+          <!-- AI Chatbot -->
+          <div class="col-4">
+            <div class="text-center">
+              <div class="rounded overflow-hidden shadow-sm border mx-auto" style="max-width: 120px;">
+                <img src="{% static 'pages/images/project3-ai.jpg' %}" alt="AI Chatbot" class="w-100" style="object-fit: cover; aspect-ratio: 9/16;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-2 bg-secondary bg-opacity-25 rounded\' style=\'aspect-ratio: 9/16;\'><small class=\'text-muted\'>Chatbot</small></div>';">
+              </div>
+              <small class="d-block mt-1 fw-medium" style="font-size: 0.7rem;">Chatbot</small>
+            </div>
+          </div>
+          
+          <!-- My Page -->
+          <div class="col-4">
+            <div class="text-center">
+              <div class="rounded overflow-hidden shadow-sm border mx-auto" style="max-width: 120px;">
+                <img src="{% static 'pages/images/project3-mypage.jpg' %}" alt="My Page" class="w-100" style="object-fit: cover; aspect-ratio: 9/16;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-2 bg-secondary bg-opacity-25 rounded\' style=\'aspect-ratio: 9/16;\'><small class=\'text-muted\'>My Page</small></div>';">
+              </div>
+              <small class="d-block mt-1 fw-medium" style="font-size: 0.7rem;">My Page</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-3 bg-white rounded border">
+          <p class="text-muted small mb-0">이 애플리케이션은 iOS와 Android 모두에서 동작하는 크로스 플랫폼 모바일 앱으로, 사용자들이 치과 건강 정보를 학습하고, 게임을 통해 재미있게 배우며, AI 챗봇을 통해 실시간 상담을 받을 수 있도록 설계되었습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="my-5 py-5">
+  <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+    <div class="card-body text-center text-white p-5">
+      <h2 class="display-5 fw-bold mb-4">Have a project in mind?</h2>
+      <p class="lead mb-4" style="max-width: 600px; margin: 0 auto;">I'm currently available for freelance work and open to new opportunities. Let's create something unique together.</p>
+      <a href="{% url 'contact' %}" class="btn btn-lg px-5 py-3 fw-bold mt-3" style="background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; color: white; box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);">
+        Get in touch
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+{% endblock %}
