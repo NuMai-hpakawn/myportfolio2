@@ -1,0 +1,239 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %}Blog Analytics{% endblock %}
+{% block brand_name %}Analytics{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<div class="text-center mb-5 py-4">
+  <h1 class="display-4 fw-bold mb-3">블로그 시각화 자료</h1>
+  <p class="lead text-muted">Blog Statistics and Visualizations</p>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row g-4 mb-5">
+  <div class="col-md-3">
+    <div class="card border-0 shadow-sm h-100">
+      <div class="card-body text-center p-4">
+        <div class="text-primary mb-2">
+          <i class="bi bi-file-text" style="font-size: 2.5rem;"></i>
+        </div>
+        <h3 class="fw-bold mb-1">{{ total_posts }}</h3>
+        <p class="text-muted small mb-0">Total Posts</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="card border-0 shadow-sm h-100">
+      <div class="card-body text-center p-4">
+        <div class="text-success mb-2">
+          <i class="bi bi-chat-dots" style="font-size: 2.5rem;"></i>
+        </div>
+        <h3 class="fw-bold mb-1">{{ total_comments }}</h3>
+        <p class="text-muted small mb-0">Total Comments</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="card border-0 shadow-sm h-100">
+      <div class="card-body text-center p-4">
+        <div class="text-info mb-2">
+          <i class="bi bi-bar-chart" style="font-size: 2.5rem;"></i>
+        </div>
+        <h3 class="fw-bold mb-1">{{ avg_comments_per_post }}</h3>
+        <p class="text-muted small mb-0">Avg Comments/Post</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="card border-0 shadow-sm h-100">
+      <div class="card-body text-center p-4">
+        <div class="text-warning mb-2">
+          <i class="bi bi-rulers" style="font-size: 2.5rem;"></i>
+        </div>
+        <h3 class="fw-bold mb-1">{{ avg_post_length|floatformat:0 }}</h3>
+        <p class="text-muted small mb-0">Avg Post Length</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Charts Section -->
+<div class="row g-4 mb-5">
+  <!-- Posts Over Time (Last 12 Months) -->
+  <div class="col-lg-6">
+    <div class="card border-0 shadow-sm h-100">
+      <div class="card-header bg-white border-bottom">
+        <h5 class="fw-bold mb-0">Posts Over Time (Last 12 Months)</h5>
+      </div>
+      <div class="card-body p-4">
+        <canvas id="postsOverTimeChart" height="250"></canvas>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Comments per Post -->
+  <div class="col-lg-6">
+    <div class="card border-0 shadow-sm h-100">
+      <div class="card-header bg-white border-bottom">
+        <h5 class="fw-bold mb-0">Top Posts by Comments</h5>
+      </div>
+      <div class="card-body p-4">
+        <canvas id="commentsPerPostChart" height="250"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Monthly Posts Distribution -->
+<div class="row g-4 mb-5">
+  <div class="col-12">
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-white border-bottom">
+        <h5 class="fw-bold mb-0">Posts Distribution by Month (All Time)</h5>
+      </div>
+      <div class="card-body p-4">
+        <canvas id="monthlyPostsChart" height="100"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Word Cloud Section -->
+<div class="row g-4 mb-5">
+  <div class="col-12">
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-white border-bottom">
+        <h5 class="fw-bold mb-0">Word Cloud from Comments (Heart Shape)</h5>
+      </div>
+      <div class="card-body p-4 text-center">
+        <img src="{% static 'blog/images/wordcloud.png' %}" alt="Heart-Shaped Word Cloud from Comments" class="img-fluid" style="max-width: 100%; height: auto;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-5 text-center bg-light rounded\'><p class=\'text-muted mb-0\'>Heart-shaped word cloud image not found.<br>Place your heart-shaped word cloud image at: blog/static/blog/images/wordcloud.png</p></div>';">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<script>
+  // Posts Over Time Chart
+  const postsOverTimeCtx = document.getElementById('postsOverTimeChart').getContext('2d');
+  new Chart(postsOverTimeCtx, {
+    type: 'line',
+    data: {
+      labels: {{ labels_over_time|safe }},
+      datasets: [{
+        label: 'Posts',
+        data: {{ posts_over_time|safe }},
+        borderColor: 'rgb(13, 110, 253)',
+        backgroundColor: 'rgba(13, 110, 253, 0.1)',
+        tension: 0.4,
+        fill: true
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        }
+      }
+    }
+  });
+
+  // Comments per Post Chart
+  const commentsPerPostCtx = document.getElementById('commentsPerPostChart').getContext('2d');
+  new Chart(commentsPerPostCtx, {
+    type: 'bar',
+    data: {
+      labels: {{ post_titles|safe }},
+      datasets: [{
+        label: 'Comments',
+        data: {{ comment_counts|safe }},
+        backgroundColor: 'rgba(25, 135, 84, 0.8)',
+        borderColor: 'rgb(25, 135, 84)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        },
+        x: {
+          ticks: {
+            maxRotation: 45,
+            minRotation: 45
+          }
+        }
+      }
+    }
+  });
+
+  // Monthly Posts Chart
+  const monthlyPostsCtx = document.getElementById('monthlyPostsChart').getContext('2d');
+  new Chart(monthlyPostsCtx, {
+    type: 'bar',
+    data: {
+      labels: {{ monthly_labels|safe }},
+      datasets: [{
+        label: 'Posts',
+        data: {{ monthly_counts|safe }},
+        backgroundColor: 'rgba(255, 193, 7, 0.8)',
+        borderColor: 'rgb(255, 193, 7)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          }
+        },
+        x: {
+          ticks: {
+            maxRotation: 45,
+            minRotation: 45
+          }
+        }
+      }
+    }
+  });
+</script>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+{% endblock %}
+
