@@ -132,7 +132,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY","django-insecure-local-key")
 
 # ✅ 2) DEBUG: 배포에서는 False가 안전함
 # Render에서 환경변수(예: RENDER=true)를 넣어두고 판별하는 방식이 깔끔함
-DEBUG = os.environ.get("DEBUG","False") =="True"
+DEBUG = os.environ.get("DEBUG","True") =="True"
 
 # ✅ 3) 허용 호스트
 # 초보 단계에서는 * 로 해도 되지만, 실제 서비스는 도메인만 넣는 게 안전함
