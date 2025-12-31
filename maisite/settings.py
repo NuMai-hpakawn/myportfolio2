@@ -123,3 +123,44 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+import os
+import dj_database_url
+
+# ✅ 1) SECRET_KEY는 환경변수로 관리 (로컬은 기본값 사용)
+SECRET_KEY = os.environ.get("SECRET_KEY","django-insecure-local-key")
+
+# ✅ 2) DEBUG: 배포에서는 False가 안전함
+# Render에서 환경변수(예: RENDER=true)를 넣어두고 판별하는 방식이 깔끔함
+DEBUG = os.environ.get("DEBUG","False") =="True"
+
+# ✅ 3) 허용 호스트
+# 초보 단계에서는 * 로 해도 되지만, 실제 서비스는 도메인만 넣는 게 안전함
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS","*").split(",")
+
+# ✅ 4) DATABASE_URL이 있으면(Postgres/Neon) 그걸 사용, 없으면 기본(SQLite) 사용
+if os.environ.get("DATABASE_URL"):
+    DATABASES["default"] = dj_database_url.parse(
+        os.environ["DATABASE_URL"],
+        conn_max_age=600,
+        ssl_require=True,
+    )
+
+# ✅ 5) 정적파일(Static) - WhiteNoise
+STATIC_URL ="static/"
+STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
+
+MIDDLEWARE = [
+"django.middleware.security.SecurityMiddleware",
+"whitenoise.middleware.WhiteNoiseMiddleware",# ✅ 추가(가능하면 위쪽에)
+# 나머지 미들웨어들...
+] + [mw for mw in MIDDLEWARE if mw not in [
+"django.middleware.security.SecurityMiddleware",
+"whitenoise.middleware.WhiteNoiseMiddleware",
+]]
+
+# WhiteNoise 추천 설정(압축+캐시용)
+STATICFILES_STORAGE ="whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+
